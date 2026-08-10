@@ -7,5 +7,7 @@ https://www.youtube.com/watch?v=Y8nbC_Uj6LI
 city of calgary events dataset:
 https://data.calgary.ca/News-and-Events/City-of-Calgary-Events/n625-9k5x/about_data
 
+https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#event-details-v2
+
 To activate virtual env:
 .venv\Scripts\Activate.ps1 
