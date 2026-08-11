@@ -5,14 +5,8 @@ import json
 
 load_dotenv()
 
-
-def get_eventbrite_events_calgary() -> dict:
-    """
-    Fetch events from Eventbrite for a specific place ID.
-
-    Returns:
-        dict: A dictionary containing the events data.
-    """
+# fetch events from eventbrite for Calgary
+def get_eventbrite_events_calgary() -> list[dict]:
 
     EVENTBRITE_URL = "https://www.eventbrite.com/home/api/search/"
 
@@ -58,8 +52,8 @@ def get_eventbrite_events_calgary() -> dict:
 
     return events
 
-
-def get_ticketmaster_events_calgary() -> dict:
+# fetch events from ticketmaster for Calgary
+def get_ticketmaster_events_calgary() -> list[dict]:
 
     TICKETMASTER_URL = "https://app.ticketmaster.com/discovery/v2/events.json"
 
@@ -98,7 +92,7 @@ def get_ticketmaster_events_calgary() -> dict:
 
 # this does not work because the Ticketmaster API lied to me and does not provide price information in the event details
 # but it would work if it did, so I will leave it here for now in case they fix their API in the future
-def get_ticketmaster_events_calgary_price(event_id: str) -> dict:
+def get_ticketmaster_events_calgary_price(event_id: str) -> list[dict]:
     TICKETMASTER_URL = f"https://app.ticketmaster.com/discovery/v2/events/{event_id}.json"
     
     api_key = os.environ["TICKETMASTER_API_KEY"]
